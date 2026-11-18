@@ -1,5 +1,6 @@
 """FastAPI user-service: CRUD, OpenAPI, метрики и трассировка."""
 
+import logging
 import os
 import sqlite3
 from typing import Annotated
@@ -116,4 +117,5 @@ def create_app(db_path=None):
     return app
 
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
 app = create_app()
